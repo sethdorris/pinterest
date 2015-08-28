@@ -1,4 +1,4 @@
-var app = angular.module("MusicApp", ["angular.filter", "ngRoute", "firebase", "angucomplete-alt"]);
+var app = angular.module("Pinterested", ["angular.filter", "ngRoute", "firebase"]);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
