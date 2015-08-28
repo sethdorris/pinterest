@@ -1,4 +1,4 @@
-var app = angular.module("Pinterested", ["angular.filter", "ngRoute", "firebase"]);
+var app = angular.module("Pinterested", ["ngRoute", "firebase"]);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {

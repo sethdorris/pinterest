@@ -1,7 +1,31 @@
+
 <label>Website Url:</label>
+<br>
+<br>
+<br>
+<br>
 <input class="form-control" ng-model="url">
 
 <label>Description</label>
 <textarea class="form-control" ng-model="description"></textarea>
 
-<button class="btn" ng-click="addPin">Add</button>
+<button class="btn" ng-click="getImages()" data-toggle="modal" data-target="#myModal">Add</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Which picture?</h4>
+      </div>
+      <div class="modal-body container">
+        <div class="col-md-6" ng-repeat="image in images">
+          <img class="imageOption" ng-src="{{image.url}}" ng-click="getImage(image,image.url)">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="addPin()" data-dismiss="modal">Add pin</button>
+      </div>
+    </div>
+  </div>
+</div>
