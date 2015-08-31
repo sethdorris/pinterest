@@ -1,0 +1,24 @@
+<nav class="navAttr">
+  <div class="col-md-12">
+    <input class="form-control search" type="text" ng-model="searchText">
+    <a class="btn btn-default" href="#/{{uid}}">{{userName}}</a>
+  <div>  
+</nav>
+<div id="board">
+  <h1>{{board}}</h1>
+  <div id="boardPins" class="row pinRow">
+    <div ng-repeat="pin in pins | filter: searchText | filter: {board: board}">
+       <div class="item">
+          <div class="well">
+             <div class="thumbnail"> 
+              <img src="{{pin.image}}" alt="Image">
+              <div class="caption">
+                <p>{{pin.description}}</p>
+          <!-- Button<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

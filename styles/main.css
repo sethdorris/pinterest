@@ -204,4 +204,26 @@ body {
 }
 
 #plus:active {color: #f00;}
+
+.boards {
+  margin-top: 20px;
+}
+
+.boardImages {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.boardImages img {
+  width: 100%;
+  height: 100%;
+}
+
+#board {
+  margin-top: 70px;
+}
+
+#boardPins {
+  margin-top: 10px;
+}
 /*# sourceMappingURL=main.css.map */

@@ -1,11 +1,17 @@
 app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "$firebaseAuth", function($scope, $firebaseArray, $http, currentAuth, $firebaseAuth){
+  var uid = currentAuth.uid;
+
   var ref = new Firebase("https://nss-pinterested.firebaseio.com/pins");
+  var boardRef = new Firebase("https://nss-pinterested.firebaseio.com/" + uid);
 
   $scope.pins = $firebaseArray(ref);
+  $scope.boards = $firebaseArray(boardRef.child("boards"));
 
   $scope.url = "";
 
   $scope.description = "";
+
+  $scope.boardSelect = "";
 
   var user = currentAuth;
 
@@ -49,17 +55,21 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "
 
   $scope.addPin = function() {
     $scope.pins.$add({
-      url: "http://" + $scope.url,
+      url: $scope.url,
       description: $scope.description,
       image: $scope.image,
+      board: $scope.boardSelect.title,
+      uid: uid,
       user_name: $scope.name,
       profile_pic: $scope.profile_pic
     });
     $scope.url = "";
     $scope.description = "";
+    $scope.boardSelect = "";
     $(".imageOption").hide();
     $(".load-6").show();
     $("#addPin").prop("disabled","disabled");
+    $('#myModal').modal('toggle');
   }; 
 
   $scope.reset = function() {
