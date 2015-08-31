@@ -9,5 +9,6 @@ app.controller("MainCtrl", ["$scope", "$firebaseArray", "currentAuth", "$firebas
 
     $scope.searchText="";
     $scope.userName=currentAuth.facebook.displayName;
+    $scope.uid=currentAuth.uid;
 
 }]);

@@ -1,5 +1,5 @@
 app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "$firebaseAuth", function($scope, $firebaseArray, $http, currentAuth, $firebaseAuth){
-  var ref = new Firebase("https://nss-pinterested.firebaseio.com/");
+  var ref = new Firebase("https://nss-pinterested.firebaseio.com/pins");
 
   $scope.pins = $firebaseArray(ref);
 

@@ -1,0 +1,42 @@
+<nav class="navAttr">
+  <div class="col-md-12">
+    <input class="form-control search" type="text" ng-model="searchText">
+    <a class="btn btn-default" href="#/{{uid}}">{{userName}}</a>
+  <div>  
+</nav>
+
+<div class="header">
+  <div class="round">
+    <img ng-src="{{profilePicture}}">
+  </div>
+  <h1>{{userName}}</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <h4>Boards:<h4>
+    </div>
+    <div class="col-md-6">
+      <h4>Pins:<h4>
+    </div>
+  </div>
+
+</div>
+
+<button ng-click="addBoard()" data-toggle="modal" data-target="#modal">Add board</button>
+
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="reset()"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Board</h4>
+      </div>
+      <div class="modal-body container">
+        <input type="text" ng-model="newBoardName" class="form-control">
+      </div>
+      <div class="modal-footer">
+        <button id="addPin" type="button" class="btn btn-default" ng-click="addPin()" data-dismiss="modal">Add Board</button>
+      </div>
+    </div>
+  </div>
+</div>
