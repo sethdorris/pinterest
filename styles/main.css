@@ -10,7 +10,7 @@
 }
 
 .footerButtonWrap {
-  bottom: 15px;
+  bottom: 30px;
   position: fixed;
   right: 15px; }
 
@@ -96,6 +96,7 @@ body {
   display: none;
 }
 
+
 *, *:before, *:after {box-sizing:  border-box !important;}
 
 
@@ -112,7 +113,7 @@ body {
  display: inline-block;
  padding:  .25rem;
  width:  100%; 
- border: 1px;
+
 }
 
 .well {
@@ -140,5 +141,40 @@ body {
   margin-left: 1%;
   float: left;
 }
+
+
+
+.addpin
+{
+  transition: all 0.25s;
+  width: 100px;
+  height: 100px;
+  
+  border-radius: 50%;
+  border: 10px solid rgba(255,255,255,1);
+  font-size: 100px;
+  text-align: center;
+  line-height: 50px;
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+  
+  color: #fff;
+  background-color: rgba(0,0,0,0.5); 
+}
+
+.addpin:hover
+{
+  border: 10px solid rgba(255,255,255,0.5);
+  color: #000;  
+}
+
+.addpin:active
+{
+  background-color: rgba(0,0,0,1);
+  border: 10px solid rgba(255,255,255,0.5);
+}
+
+#plus:active {color: #f00;}
 
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,7 @@
-app.controller("MainCtrl", ["$scope", "$firebaseArray", "currentAuth", "$firebaseAuth", "Auth", function($scope, $firebaseArray, currentAuth, $firebaseAuth, Auth) {
+app.controller("MainCtrl", ["$scope", "$firebaseArray", "currentAuth", "$firebaseAuth", "Auth", "$location", function($scope, $firebaseArray, currentAuth, $firebaseAuth, Auth, $location) {
 	//Add Firebase Reference
 
-   var pinsArray = new Firebase("https://nss-pinterested.firebaseio.com/");
+   var pinsArray = new Firebase("https://nss-pinterested.firebaseio.com/pins/");
     $scope.pins = $firebaseArray(pinsArray);
     console.log($scope.pins);
 
@@ -9,5 +9,13 @@ app.controller("MainCtrl", ["$scope", "$firebaseArray", "currentAuth", "$firebas
 
     $scope.searchText="";
     $scope.userName=currentAuth.facebook.displayName;
+
+
+        //Go
+
+$scope.go = function ( path ) {
+  $location.path( path );
+};
+
 
 }]);
