@@ -5,6 +5,9 @@ app.controller("MainCtrl", ["$scope", "$firebaseArray", "currentAuth", "$firebas
     $scope.pins = $firebaseArray(pinsArray);
     console.log($scope.pins);
 
+    console.log(currentAuth);
+
     $scope.searchText="";
+    $scope.userName=currentAuth.facebook.displayName;
 
 }]);

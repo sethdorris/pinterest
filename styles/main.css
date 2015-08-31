@@ -127,7 +127,18 @@ body {
  padding: 0;
 }
 
-.navAttr input {
+.navAttr input, .navAttr button {
   margin-top: 10px;
 }
+.navAttr input {
+  width: 75%;
+  float: left;
+}
+
+.navAttr button {
+  width: 24%;
+  margin-left: 1%;
+  float: left;
+}
+
 /*# sourceMappingURL=main.css.map */

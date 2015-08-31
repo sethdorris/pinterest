@@ -1,9 +1,10 @@
 <!-- Navigation -->
-    <nav class="navAttr">
-      <div class="col-md-6">
-      <input class="form-control" type="text" ng-model="searchText">
-      </div>
-    </nav>
+<nav class="navAttr">
+  <div class="col-md-6">
+    <input class="form-control search" type="text" ng-model="searchText">
+    <button class="btn">{{userName}}</button>
+  <div>  
+</nav>
 <!-- Pins on page -->
 <div class="row">
   <div ng-repeat="pin in pins | filter: searchText">
