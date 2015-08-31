@@ -136,17 +136,21 @@ body {
  padding: 0;
 }
 
-.navAttr input, .navAttr a {
+.navAttr input, .navAttr .btn {
   margin-top: 10px;
 }
 .navAttr input {
-  width: 75%;
+  width: 72%;
   float: left;
 }
 
-.navAttr a {
-  width: 24%;
+.navAttr .btn {
+  width: 22%;
   margin-left: 1%;
+  float: left;
+}
+
+.logo {
   float: left;
 }
 
@@ -218,9 +222,25 @@ body {
 
 #board {
   margin-top: 70px;
+  text-align: center;
 }
 
 #boardPins {
-  margin-top: 10px;
+  margin-top: -100px;
+}
+
+a {
+  color: black;
+}
+
+.logo {
+  margin-top: 5px;
+  margin-right: 1%;
+  width: 4%;
+}
+
+#addBoard {
+  display: block;
+  margin: 0 auto 50px auto;
 }
 /*# sourceMappingURL=main.css.map */
