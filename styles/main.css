@@ -28,7 +28,7 @@ html {
   text-align: center;
 }
 
-#form {
+#form, #login {
   margin-top: 70px;
   background: #e9e9e9;
 }

@@ -1,4 +1,4 @@
-app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", function($scope, $firebaseArray, $http){
+app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "$firebaseAuth", function($scope, $firebaseArray, $http, currentAuth, $firebaseAuth){
   var ref = new Firebase("https://nss-pinterested.firebaseio.com/");
 
   $scope.pins = $firebaseArray(ref);
@@ -6,6 +6,15 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", function($scope,
   $scope.url = "";
 
   $scope.description = "";
+
+  var user = currentAuth;
+
+  console.log(user);
+
+  $scope.name = user.facebook.displayName;
+  $scope.profile_pic = user.facebook.profileImageURL;
+
+  console.log($scope.name);
 
   $scope.getImages = function() {
     console.log('click');
@@ -32,7 +41,9 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", function($scope,
     $scope.pins.$add({
       url: "http://" + $scope.url,
       description: $scope.description,
-      image: $scope.image
+      image: $scope.image,
+      user_name: $scope.name,
+      profile_pic: $scope.profile_pic
     });
     $scope.url = "";
     $scope.description = "";
