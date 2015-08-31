@@ -18,8 +18,8 @@
         <h4 class="modal-title" id="myModalLabel">Which picture?</h4>
       </div>
       <div class="modal-body container">
-        <div class="col-md-6" ng-repeat="image in images">
-          <img class="imageOption" ng-src="{{image.url}}" ng-click="getImage(image,image.url)">
+        <div class="col-md-6" ng-repeat="image in images" ng-click="setSelected($index,image.url)" ng-class="{selected: $index === idSelectedImage}">
+          <img class="imageOption" ng-src="{{image.url}}">
         </div>
       </div>
       <div class="modal-footer">

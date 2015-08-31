@@ -19,17 +19,23 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", function($scope,
     });
   };
 
-  $scope.getImage = function(image, url) {
+  $scope.idSelectedImage = null;
+
+  $scope.setSelected = function($index, url) {
     console.log('click');
+    console.log($index);
     $scope.image = url;
+    $scope.idSelectedImage = $index;
   }; 
 
   $scope.addPin = function() {
     $scope.pins.$add({
-      url: $scope.url,
+      url: "http://" + $scope.url,
       description: $scope.description,
       image: $scope.image
     });
+    $scope.url = "";
+    $scope.description = "";
   }; 
 
 }]);

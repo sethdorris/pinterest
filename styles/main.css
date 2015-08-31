@@ -38,4 +38,13 @@ html {
   margin: 0 auto 0 auto;
 }
 
+#form > div > .btn {
+  margin-top: 10px;
+  float: right;
+}
+
+.selected > img {
+  border: 2px solid red;
+}
+
 /*# sourceMappingURL=main.css.map */
