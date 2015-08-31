@@ -19,11 +19,19 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "
   $scope.getImages = function() {
     console.log('click');
     console.log("http://api.diffbot.com/v3/image?token=48ce59bfa898f11da63f9b42132c8b6f&url=http%3A%2F%2F" + $scope.url);
-    $http.get("http://api.diffbot.com/v3/image?token=48ce59bfa898f11da63f9b42132c8b6f&url=http%3A%2F%2F" + $scope.url)
+    $http.get("http://api.diffbot.com/v3/image?token=48ce59bfa898f11da63f9b42132c8b6f&url=" + encodeURIComponent($scope.url))
     .success(function(response) {
       console.log('response',response);
-      $scope.images = response.objects.slice(0,4);
+      if (response.error) {
+        $(".load-6").hide();
+        $("#errorMessage").show();
+      } else {
+        $scope.images = response.objects.slice(0,4);
+        $(".load-6").hide();
+        $(".imageOption").show();
+      }
     }).error(function(error) {
+      
       console.log(error);
     });
   };
@@ -35,6 +43,7 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "
     console.log($index);
     $scope.image = url;
     $scope.idSelectedImage = $index;
+    $("#addPin").prop("disabled",false);
   }; 
 
   $scope.addPin = function() {
@@ -47,6 +56,16 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "
     });
     $scope.url = "";
     $scope.description = "";
+    $(".imageOption").hide();
+    $(".load-6").show();
+    $("#addPin").prop("disabled","disabled");
   }; 
+
+  $scope.reset = function() {
+    $(".imageOption").hide();
+    $(".load-6").show();
+    $("#errorMessage").hide();
+    $("#addPin").prop("disabled","disabled");
+  }
 
 }]);

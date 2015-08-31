@@ -47,4 +47,45 @@ html {
   border: 2px solid red;
 }
 
+#login > button {
+  background: #3B5998;
+  color: white;
+}
+
+#login {
+  text-align: center;
+}
+
+.load-6 .letter {
+    animation-name: loadingF;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-direction: linear;
+    float: left;
+}
+
+.load-6 {
+  margin: 0 auto 0 auto;
+  display: inline-block;
+}
+
+.l-1 {animation-delay: .48s;}
+.l-2 {animation-delay: .6s;}
+.l-3 {animation-delay: .72s;}
+.l-4 {animation-delay: .84s;}
+.l-5 {animation-delay: .96s;}
+.l-6 {animation-delay: 1.08s;}
+.l-7 {animation-delay: 1.2s;}
+.l-8 {animation-delay: 1.32s;}
+.l-9 {animation-delay: 1.44s;}
+.l-10 {animation-delay: 1.56s;}
+
+@keyframes loadingF {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#errorMessage {
+  display: none;
+}
 /*# sourceMappingURL=main.css.map */
