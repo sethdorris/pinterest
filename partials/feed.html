@@ -1,6 +1,12 @@
+<!-- Navigation -->
+    <nav class="navAttr">
+      <div class="col-md-6">
+      <input class="form-control" type="text" ng-model="searchText">
+      </div>
+    </nav>
 <!-- Pins on page -->
 <div class="row">
-  <div ng-repeat="pin in pins">
+  <div ng-repeat="pin in pins | filter: searchText">
      <div class="item">
         <div class="well">
            <div class="thumbnail"> 

@@ -1,4 +1,4 @@
-app.controller("AuthCtrl", ["$scope", "$firebaseObject", function($scope) {
+app.controller("AuthCtrl", ["$scope", "$location", function($scope, $location) {
   var ref = new Firebase("https://nss-pinterested.firebaseio.com");
 
   $scope.facebookLogin = function() {
@@ -8,6 +8,8 @@ app.controller("AuthCtrl", ["$scope", "$firebaseObject", function($scope) {
       } else {
         console.log("Authenticated successfully with payload:", authData);
         $scope.authData = authData;
+        console.log($location.path());
+        $location.path("/");
       }
     });
   }

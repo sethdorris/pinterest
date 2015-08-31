@@ -5,4 +5,6 @@ app.controller("MainCtrl", ["$scope", "$firebaseArray", "currentAuth", "$firebas
     $scope.pins = $firebaseArray(pinsArray);
     console.log($scope.pins);
 
+    $scope.searchText="";
+
 }]);

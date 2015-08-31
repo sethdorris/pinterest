@@ -5,7 +5,9 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 100%; }
+  width: 100%;
+  z-index: 1 
+}
 
 .footerButtonWrap {
   bottom: 15px;
@@ -123,5 +125,9 @@ body {
 }
 .thumbnail { 
  padding: 0;
+}
+
+.navAttr input {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=main.css.map */
