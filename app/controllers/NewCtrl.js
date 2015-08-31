@@ -36,6 +36,7 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "
     });
   };
 
+
   $scope.idSelectedImage = null;
 
   $scope.setSelected = function($index, url) {

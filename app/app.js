@@ -7,8 +7,11 @@ app.run(["$rootScope", "$location", function($rootScope, $location) {
     if (error === "AUTH_REQUIRED") {
       $location.path("/login");
     }
+    
   });
 }]);
+
+
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
