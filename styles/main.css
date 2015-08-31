@@ -16,6 +16,11 @@ html {
   background-color: #e9e9e9; 
 }
 
+body { 
+  background-color: #E9E9E9;
+
+}
+
 .imageOption {
   float: left;
   width: 48%;
@@ -47,4 +52,34 @@ html {
   border: 2px solid red;
 }
 
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ -moz-column-width: 18em;
+ -webkit-column-width: 12em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+ padding-top: 125px;
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  100%; 
+ border: 1px;
+}
+
+.well {
+ position:relative;
+ display: block;
+ padding: 0;
+ margin-bottom: 1px;
+ border: 0;
+
+}
+.thumbnail { 
+ padding: 0;
+}
 /*# sourceMappingURL=main.css.map */
