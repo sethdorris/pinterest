@@ -1,3 +1,9 @@
+<nav class="navAttr">
+  <div class="col-md-1-offset-10"> 
+    <a class="btn btn-default" href="#/{{uid}}">{{userName}}</a>
+  <div>  
+</nav>
+
 <div id="form">
   <div>
     <label>Website Url:</label>
@@ -14,31 +20,16 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="reset()"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Which picture?</h4>
       </div>
       <div class="modal-body container">
-        <div class="load-6">
-            <div class="letter-holder">
-                <div class="l-1 letter">L</div>
-                <div class="l-2 letter">o</div>
-                <div class="l-3 letter">a</div>
-                <div class="l-4 letter">d</div>
-                <div class="l-5 letter">i</div>
-                <div class="l-6 letter">n</div>
-                <div class="l-7 letter">g</div>
-                <div class="l-8 letter">.</div>
-                <div class="l-9 letter">.</div>
-                <div class="l-10 letter">.</div>
-            </div>
-        </div>
-        <div id="errorMessage">There are no images on this website.</div>
         <div class="col-md-6" ng-repeat="image in images" ng-click="setSelected($index,image.url)" ng-class="{selected: $index === idSelectedImage}">
           <img class="imageOption" ng-src="{{image.url}}">
         </div>
       </div>
       <div class="modal-footer">
-        <button id="addPin" type="button" class="btn btn-default" ng-click="addPin()" data-dismiss="modal" disabled="disabled">Add pin</button>
+        <button type="button" class="btn btn-default" ng-click="addPin()" data-dismiss="modal">Add pin</button>
       </div>
     </div>
   </div>
