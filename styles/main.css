@@ -279,6 +279,12 @@ a {
   position: absolute;
   top: 5px;
   right: 5px;
+  background: transparent;
+  color: #BD081C;
+}
+
+.pinIt:hover {
+  background: white;
 }
 
 hr {
