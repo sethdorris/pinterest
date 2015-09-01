@@ -8,8 +8,8 @@ app.controller("AuthCtrl", ["$scope", "$location", function($scope, $location) {
       } else {
         console.log("Authenticated successfully with payload:", authData);
         $scope.authData = authData;
-        console.log($location.path());
-        $location.path("/");
+        $location.path("#/").replace();
+        $scope.$apply()
       }
     });
   }
