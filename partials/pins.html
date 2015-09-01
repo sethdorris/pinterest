@@ -11,13 +11,17 @@
     <div ng-repeat="pin in pins | filter: searchText | filter: {uid: uid}">
        <div class="item">
           <div class="well">
-             <div class="thumbnail"> 
-              <img src="{{pin.image}}" alt="Image">
-              <div class="caption">
-                <p>{{pin.description}}</p>
-          <!-- Button<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p> -->
-            </div>
+         <div class="thumbnail">
+          <button class="pinIt btn btn-xs" data-toggle="modal" data-target="#modal" ng-click="getPin(pin)"><span class="glyphicon glyphicon-pushpin"></span></button> 
+          <img src="{{pin.image}}" alt="Image">
+          <hr>
+          <div class="caption"><p>{{pin.description}}</p></div>
+          <hr>
+          <div class="pinInfo">
+            <div class="round2"><img ng-src="{{pin.profile_pic}}"></div>
+            <p>{{pin.user_name}}</p>
           </div>
+        </div>
         </div>
       </div>
     </div>
