@@ -1,7 +1,9 @@
 <nav class="navAttr">
   <div class="col-md-12">
-    <input class="form-control search" type="text" ng-model="searchText" placeholder="Search">
-    <a class="btn btn-default" href="#/{{uid}}">{{userName}}</a>
+    <a href="#/" class="logoLink"><img class="logo" src="images/Pinterest_Badge_Red.png"></a>
+    <input class="form-control search" type="text" ng-model="searchText">
+    <a class="btn btn-default" href="#/profile/{{uid}}">{{userName}}</a>
+
   <div>  
 </nav>
 
@@ -16,7 +18,7 @@
       <h4>Boards: {{boardsNumber}}<h4>
     </div>
     <div class="col-md-6">
-      <h4>Pins:<h4>
+      <h4><a href="#/pins/{{uid}}">Pins: {{pinsNumber}}</a><h4>
     </div>
   </div>
 
@@ -26,7 +28,7 @@
   <div ng-repeat="board in boards" class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <h4><a href="#/{{uid}}/{{board.title}}">{{board.title}}</a></h4>
+        <h4><a href="#/board/{{uid}}/{{board.title}}">{{board.title}}</a></h4>
         <hr>
         <div class='boardImages' ng-repeat="pin in pins | filter: {board: board.title} | limitTo: 1">
           <img ng-src="{{pin.image}}">
@@ -36,7 +38,7 @@
   </div>
 </div>
 
-<button data-toggle="modal" data-target="#modal">Add board</button>
+<button id="addBoard" data-toggle="modal" data-target="#modal">Add board</button>
 
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">

@@ -1,9 +1,10 @@
-app.controller("PinCtrl", ["$scope", "$firebaseArray", "$http", function($scope, $firebaseArray, $http){
-  var ref = new Firebase("https://nss-pinterested.firebaseio.com/");
+app.controller("PinCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", function($scope, $firebaseArray, $http, currentAuth){
+  var uid = currentAuth.uid;
 
-  $scope.pins = $firebaseArray(ref);
+  $scope.userName = currentAuth.facebook.displayName;
 
-  console.log($scope.pins);
+  var ref = new Firebase("https://nss-pinterested.firebaseio.com/pins");
 
+  $scope.pins = $firebaseArray(ref.orderByChild("uid").equalTo(uid));
 
-}
+}]);

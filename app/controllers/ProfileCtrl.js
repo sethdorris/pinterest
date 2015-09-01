@@ -13,6 +13,7 @@ app.controller("ProfileCtrl", ["$scope", "$firebaseArray", "currentAuth", "$fire
 
   $scope.boards.$loaded().then(function() {
     $scope.boardsNumber = $scope.boards.length;
+    $scope.pinsNumber = $scope.pins.length;
   });
   
 
