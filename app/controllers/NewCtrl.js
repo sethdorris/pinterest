@@ -6,13 +6,9 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "
 
   $scope.pins = $firebaseArray(ref);
   $scope.boards = $firebaseArray(boardRef.child("boards"));
-
   $scope.uid = uid;
-
   $scope.url = "";
-
   $scope.description = "";
-
   $scope.boardSelect = "";
 
   var user = currentAuth;
