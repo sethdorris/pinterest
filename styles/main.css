@@ -116,7 +116,7 @@ body {
  -webkit-column-width: 12em;
  -moz-column-gap: 1em;
  -webkit-column-gap:1em; 
- padding-top: 125px;
+ padding-top: 100px;
   
 }
 
@@ -186,7 +186,7 @@ body {
   border: 10px solid rgba(255,255,255,1);
   font-size: 100px;
   text-align: center;
-  line-height: 92px;
+  line-height: 20px;
   display: inline-block;
   user-select: none;
   cursor: pointer;
