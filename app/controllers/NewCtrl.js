@@ -1,4 +1,4 @@
-app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "$firebaseAuth", function($scope, $firebaseArray, $http, currentAuth, $firebaseAuth){
+app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "$firebaseAuth", "$location", function($scope, $firebaseArray, $http, currentAuth, $firebaseAuth, $location){
   var uid = currentAuth.uid;
 
   var ref = new Firebase("https://nss-pinterested.firebaseio.com/pins");
@@ -60,6 +60,8 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "
       user_name: $scope.name,
       profile_pic: $scope.profile_pic
     });
+    $location.path("#/board/"+ $scope.uid + "/" + $scope.boardSelect.title).replace();
+    $scope.$apply();
     $scope.url = "";
     $scope.description = "";
     $scope.boardSelect = "";
