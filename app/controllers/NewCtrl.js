@@ -17,22 +17,21 @@ app.controller("NewCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", "
 
   var user = currentAuth;
 
-  console.log(user);
-
   $scope.name = user.facebook.displayName;
   $scope.profile_pic = user.facebook.profileImageURL;
 
-  console.log($scope.name);
-
+  //Use diffbot to scan entered url for images
   $scope.getImages = function() {
     console.log('click');
     console.log("http://api.diffbot.com/v3/image?token=48ce59bfa898f11da63f9b42132c8b6f&url=http%3A%2F%2F" + $scope.url);
     $http.get("http://api.diffbot.com/v3/image?token=48ce59bfa898f11da63f9b42132c8b6f&url=" + encodeURIComponent($scope.url))
     .success(function(response) {
       console.log('response',response);
+      //if response has no images (error)
       if (response.error) {
         $(".load-6").hide();
         $("#errorMessage").show();
+      //otherwise show the first four images
       } else {
         $scope.images = response.objects.slice(0,4);
         $(".load-6").hide();

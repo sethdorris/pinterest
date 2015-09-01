@@ -24,7 +24,7 @@
 </div>
 
 <div class="container boards">
-  <div ng-repeat="board in boards" class="col-md-4">
+  <div ng-repeat="board in boards | filter: searchText" class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-body">
         <h4><a href="#/board/{{uid}}/{{board.title}}">{{board.title}}</a></h4>
@@ -39,6 +39,8 @@
 
 <button id="addBoard" data-toggle="modal" data-target="#modal">Add board</button>
 
+
+<!-- Add Board Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

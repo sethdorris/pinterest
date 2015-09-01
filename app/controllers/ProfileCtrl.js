@@ -1,3 +1,6 @@
+//User's profile
+//Displays boards, number of boards, number of pins, allows user to add new board
+
 app.controller("ProfileCtrl", ["$scope", "$firebaseArray", "currentAuth", "$firebaseObject", function($scope, $firebaseArray, currentAuth, $firebaseObject){
   var uid = currentAuth.uid;  
   $scope.uid = uid;
@@ -7,9 +10,6 @@ app.controller("ProfileCtrl", ["$scope", "$firebaseArray", "currentAuth", "$fire
   $scope.pins = $firebaseArray(pinRef.orderByChild("uid").equalTo(uid));
 
   $scope.boards = $firebaseArray(userRef.child("boards"));
-
-  console.log($scope.boards);
-  console.log($scope.pins);
 
   $scope.boards.$loaded().then(function() {
     $scope.boardsNumber = $scope.boards.length;
@@ -27,4 +27,5 @@ app.controller("ProfileCtrl", ["$scope", "$firebaseArray", "currentAuth", "$fire
       title: $scope.newBoard
     });
   };
+
 }]);

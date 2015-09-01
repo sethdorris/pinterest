@@ -1,3 +1,5 @@
+//displays all pins created by user
+
 app.controller("PinCtrl", ["$scope", "$firebaseArray", "$http", "currentAuth", function($scope, $firebaseArray, $http, currentAuth){
   var uid = currentAuth.uid;
 
