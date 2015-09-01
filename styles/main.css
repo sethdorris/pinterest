@@ -249,4 +249,33 @@ a {
   display: block;
   margin: 0 auto 50px auto;
 }
+
+.round2 {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-left: 10px;
+}
+
+.round2 img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.pinInfo p {
+  margin-top: 15px; 
+  float: left;
+  margin-left: 10px;
+}
+
+.pinInfo {
+  height: 70px;
+}
+
+.pinIt {
+  float: right;
+  position: relative;
+}
 /*# sourceMappingURL=main.css.map */
