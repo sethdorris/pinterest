@@ -276,6 +276,8 @@ a {
 
 .pinIt {
   float: right;
-  position: relative;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 /*# sourceMappingURL=main.css.map */
