@@ -50,7 +50,7 @@ app.config(['$routeProvider', function($routeProvider) {
         return Auth.$requireAuth();
       }]
     }
-  }).when('board/:uid/:board', {
+  }).when('/board/:uid/:board', {
     templateUrl: 'partials/board.html',
     controller: 'BoardCtrl',
     resolve: {
