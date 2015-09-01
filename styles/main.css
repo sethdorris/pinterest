@@ -295,4 +295,11 @@ hr {
 .caption p {
   margin-bottom: 0px;
 }
+
+.caption a {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #969696;
+}
 /*# sourceMappingURL=main.css.map */

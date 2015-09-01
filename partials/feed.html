@@ -15,7 +15,7 @@
           <button class="pinIt btn btn-xs" data-toggle="modal" data-target="#modal" ng-click="getPin(pin)"><span class="glyphicon glyphicon-pushpin"></span></button> 
           <img src="{{pin.image}}" alt="Image">
           <hr>
-          <div class="caption"><p>{{pin.description}}</p></div>
+          <div class="caption"><p>{{pin.description}}</p><a href="{{pin.url}}">{{pin.url}}</a></div>
           <hr>
           <div class="pinInfo">
             <div class="round2"><img ng-src="{{pin.profile_pic}}"></div>
