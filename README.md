@@ -6,7 +6,5 @@ Team consisted of four individuals, and task was to build a Pinterest replica us
 
 To view the final product you'll need to do the following:
 
-``
-1. Fork the repository
-2. Open Terminal 
-``
+*1. Fork the repository
+*2. Open Terminal 
