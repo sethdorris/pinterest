@@ -21,7 +21,7 @@ bower install
 
 npm and bower will install all of the dependencies used in the project. 
 
-* 4. Run a simple HTTP Server in order to serve the projet.
+* 4. Run a simple HTTP Server in order to serve the project.
 
 `bash
 python -m simpleHTTPServer 8000
